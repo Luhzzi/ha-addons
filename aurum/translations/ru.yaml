@@ -1,0 +1,47 @@
+configuration:
+  postgres_password:
+    name: Пароль Postgres
+    description: >-
+      Пароль внутренней базы данных Aurum. Если оставить пустым — при первом
+      запуске будет сгенерирован и сохранён в /data. Задайте до первого запуска,
+      чтобы иметь известное значение.
+  postgres_db:
+    name: База данных Postgres
+    description: Имя базы данных Postgres, которую использует Aurum.
+  default_currency:
+    name: Валюта по умолчанию
+    description: >-
+      Валюта, показываемая в интерфейсе, если у счёта не задана своя
+      (код ISO 4217, например USD, EUR, RUB).
+  coingecko_api_key:
+    name: API-ключ CoinGecko
+    description: >-
+      Бесплатный Demo API-ключ (coingecko.com/en/api/pricing) для живых цен
+      на вкладке «Крипта».
+  enable_docs:
+    name: Включить API-документацию
+    description: >-
+      Swagger UI / ReDoc / openapi.json на /api/docs. Отключите на публичных
+      инстансах без basic auth.
+  cors_origins:
+    name: Разрешённые CORS-источники
+    description: >-
+      Список браузерных источников, которым разрешено вызывать API, через
+      запятую. Оставьте пустым — фронтенд и API на одном источнике.
+  basic_auth_user:
+    name: Пользователь Basic Auth
+    description: >-
+      У Aurum нет собственного экрана входа. Задайте пользователя (и пароль
+      ниже), чтобы включить HTTP Basic Auth перед всем приложением.
+      НАСТОЯТЕЛЬНО рекомендуется — аддон доступен из вашей сети.
+  basic_auth_password:
+    name: Пароль Basic Auth
+  allowed_hosts:
+    name: Разрешённые хосты
+    description: >-
+      Имена хостов, на которые отвечает приложение; для остальных — ошибка 421
+      (защита от DNS rebinding). По умолчанию "*" отключает проверку, чтобы
+      приложение работало по IP. Укажите ваш хост (например "homeassistant.local"),
+      если используете имя хоста.
+network:
+  8099/TCP: Веб-интерфейс Aurum

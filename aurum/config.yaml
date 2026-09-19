@@ -1,0 +1,41 @@
+name: Aurum
+version: "0.1.0"
+slug: aurum
+description: >-
+  Self-hosted personal finance OS — cash flow, net worth, budgets and every
+  income stream you own. Free for personal use. This add-on bundles Aurum's
+  Postgres, FastAPI backend and web UI into a single container.
+url: "https://github.com/Zproger/Aurum"
+arch:
+  - aarch64
+  - amd64
+init: false
+boot: auto
+startup: application
+ports:
+  8099/tcp: 8099
+ports_description:
+  8099/tcp: Aurum web interface (HTTP). Access it at http://[HOST]:8099
+webui: http://[HOST]:8099
+watchdog: http://[HOST]:8099/api/health
+options:
+  postgres_password: ""
+  postgres_db: aurum
+  default_currency: USD
+  coingecko_api_key: ""
+  enable_docs: true
+  cors_origins: ""
+  basic_auth_user: ""
+  basic_auth_password: ""
+  allowed_hosts: "*"
+schema:
+  postgres_password: "password"
+  postgres_db: "str"
+  default_currency: "str"
+  coingecko_api_key: "str?"
+  enable_docs: bool
+  cors_origins: "str"
+  basic_auth_user: "str?"
+  basic_auth_password: "password?"
+  allowed_hosts: "str"
+image: "ghcr.io/Luhzzi/aurum-addon"

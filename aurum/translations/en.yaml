@@ -1,0 +1,46 @@
+configuration:
+  postgres_password:
+    name: Postgres password
+    description: >-
+      Password of Aurum's internal database. If left blank, a random one is
+      generated on the first start and stored under /data. Set it before the
+      first start to have a known value.
+  postgres_db:
+    name: Postgres database
+    description: Name of the Postgres database used by Aurum.
+  default_currency:
+    name: Default currency
+    description: >-
+      Default currency shown across the UI when an account does not override
+      it (ISO 4217 code, e.g. USD, EUR, RUB).
+  coingecko_api_key:
+    name: CoinGecko API key
+    description: >-
+      Free Demo API key (coingecko.com/en/api/pricing) for the Crypto tab's
+      live prices. Leave blank if not needed.
+  enable_docs:
+    name: Enable API docs
+    description: >-
+      Swagger UI / ReDoc / openapi.json at /api/docs. Disable on public
+      instances without basic auth.
+  cors_origins:
+    name: Allowed CORS origins
+    description: >-
+      Comma-separated list of browser origins allowed to call the API. Leave
+      empty — the frontend and API share one origin.
+  basic_auth_user:
+    name: Basic auth user
+    description: >-
+      Aurum has no login screen of its own. Set a user (and password below) to
+      put an HTTP Basic Auth prompt in front of the whole app. STRONGLY
+      recommended — the add-on is reachable from your network.
+  basic_auth_password:
+    name: Basic auth password
+  allowed_hosts:
+    name: Allowed hosts
+    description: >-
+      Hostnames the app answers to; anything else gets a 421 (DNS rebinding
+      protection). Default "*" disables the check so the app works by IP.
+      Set it to your hostname (e.g. "homeassistant.local") if you use one.
+network:
+  8099/TCP: Aurum web interface

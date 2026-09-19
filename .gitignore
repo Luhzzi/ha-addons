@@ -1,0 +1,7 @@
+# Supervisor/HA artefacts
+addon_configs/
+*.log
+
+# Editor
+.vscode/
+.idea/
