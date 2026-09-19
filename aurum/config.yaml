@@ -38,4 +38,4 @@ schema:
   basic_auth_user: "str?"
   basic_auth_password: "password?"
   allowed_hosts: "str"
-image: "ghcr.io/Luhzzi/aurum-addon"
+image: "ghcr.io/luhzzi/aurum-addon"
