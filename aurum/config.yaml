@@ -16,7 +16,7 @@ ports:
   8099/tcp: 8099
 ports_description:
   8099/tcp: Aurum web interface (HTTP). Access it at http://[HOST]:8099
-webui: http://[HOST]:8099
+webui: http://[HOST]:[PORT:8099]
 watchdog: http://[HOST]:8099/api/health
 options:
   postgres_password: ""
