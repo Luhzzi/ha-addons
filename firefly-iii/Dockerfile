@@ -16,6 +16,9 @@ ARG FF_REF=version-6.7.4
 
 FROM fireflyiii/core:${FF_REF}
 
+# Redeclare after FROM so it is available to LABEL below.
+ARG BUILD_VERSION=0.1.0
+
 USER root
 
 # mariadb: the bundled database (upstream runs it in a second container).
